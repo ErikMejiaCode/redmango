@@ -1,4 +1,3 @@
-import React from "react";
 import { MenuItemList } from "../Components/Page/MenuItems";
 
 function Home() {
