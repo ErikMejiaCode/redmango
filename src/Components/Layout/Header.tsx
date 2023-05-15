@@ -1,4 +1,6 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+
 let logo = require("../../Assets/Images/mango.png");
 
 function Header() {
@@ -6,7 +8,9 @@ function Header() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-dark navbar-dark">
         <div className="container-fluid">
-          <img src={logo} style={{ height: "40px" }} className="m-1" />
+          <NavLink className="nav-link" aria-current="page" to="/">
+            <img src={logo} style={{ height: "40px" }} className="m-1" />
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -22,9 +26,14 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <NavLink className="nav-link" to="/">
                   Home
-                </a>
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/shopping">
+                  <i className="bi bi-cart"></i>
+                </NavLink>
               </li>
               <li className="nav-item dropdown">
                 <a
