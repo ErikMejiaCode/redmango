@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { useUpdateShoppingCartMutation } from "../apis/shoppingCartApi";
+import { MainLoader } from "../Components/Page/Common";
 // USER ID - bcefdbde-70bf-44b3-845d-1530341c417c
 
 function MenuItemDetails() {
@@ -117,7 +118,7 @@ function MenuItemDetails() {
           className="d-flex justify-content-center"
           style={{ width: "100%" }}
         >
-          <div>Loading...</div>
+          <MainLoader />
         </div>
       )}
     </div>
