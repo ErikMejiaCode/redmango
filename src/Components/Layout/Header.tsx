@@ -31,7 +31,7 @@ function Header() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/shopping">
+                <NavLink className="nav-link" to="/ShoppingCart">
                   <i className="bi bi-cart"></i>
                 </NavLink>
               </li>
