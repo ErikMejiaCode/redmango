@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initalState = {
-  menuitem: [],
+  menuItem: [],
 };
 
 export const menuItemSlice = createSlice({
@@ -9,7 +9,7 @@ export const menuItemSlice = createSlice({
   initialState: initalState,
   reducers: {
     setMenuItem: (state, action) => {
-      state.menuitem = action.payload;
+      state.menuItem = action.payload;
     },
   },
 });

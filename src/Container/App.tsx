@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     if (!isLoading) {
       console.log(data.result);
-      dispatch(setShoppingCart(data.result.cartItems));
+      dispatch(setShoppingCart(data.result?.cartItems));
     }
   }, [data]);
 
@@ -31,7 +31,7 @@ function App() {
             path="/menuItemDetails/:menuItemId"
             element={<MenuItemDetails />}
           ></Route>
-          <Route path="/ShoppingCart" element={<ShoppingCart />}></Route>
+          <Route path="/shoppingcart" element={<ShoppingCart />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </div>

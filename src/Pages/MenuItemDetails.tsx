@@ -35,6 +35,8 @@ function MenuItemDetails() {
       userId: "bcefdbde-70bf-44b3-845d-1530341c417c",
     });
 
+    console.log(response);
+
     setIsAddingToCart(false);
   };
 

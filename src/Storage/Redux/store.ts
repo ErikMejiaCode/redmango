@@ -5,7 +5,7 @@ import { shoppingCartReducer } from "./ShoppingCartSlice";
 
 const store = configureStore({
   reducer: {
-    menuItemReducer: menuItemReducer,
+    menuItemStore: menuItemReducer,
     shoppingCartStore: shoppingCartReducer,
     [menuItemApi.reducerPath]: menuItemApi.reducer,
     [shoppingCartApi.reducerPath]: shoppingCartApi.reducer,
