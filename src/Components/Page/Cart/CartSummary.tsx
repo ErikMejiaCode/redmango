@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { cartItemInterface } from "../../../Interfaces";
+import { cartItemInterface, userInterface } from "../../../Interfaces";
 import { RootState } from "../../../Storage/Redux/store";
 import {
   removeFromCart,
@@ -11,6 +11,9 @@ import { useUpdateShoppingCartMutation } from "../../../apis/shoppingCartApi";
 function CartSummary() {
   const dispatch = useDispatch();
   const [updateShoppingCart] = useUpdateShoppingCartMutation();
+  const userData: userInterface = useSelector(
+    (state: RootState) => state.userAuthStore
+  );
   const shoppingCartFromStore: cartItemInterface[] = useSelector(
     (state: RootState) => state.shoppingCartStore.cartItems ?? []
   );
@@ -30,7 +33,7 @@ function CartSummary() {
       updateShoppingCart({
         menuItemId: cartItem.menuItem?.id,
         updateQuantityBy: 0,
-        userId: "bcefdbde-70bf-44b3-845d-1530341c417c",
+        userId: userData.id,
       });
       dispatch(removeFromCart({ cartItem, quantity: 0 }));
     } else {
@@ -38,7 +41,7 @@ function CartSummary() {
       updateShoppingCart({
         menuItemId: cartItem.menuItem?.id,
         updateQuantityBy: updateQuantityBy,
-        userId: "bcefdbde-70bf-44b3-845d-1530341c417c",
+        userId: userData.id,
       });
       dispatch(
         updateQuantity({

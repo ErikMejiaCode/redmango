@@ -61,7 +61,7 @@ function Header() {
                 </NavLink>
               </li>
 
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink className="nav-link" to="/authentication">
                   Authentication
                 </NavLink>
@@ -70,7 +70,7 @@ function Header() {
                 <NavLink className="nav-link" to="/authorization">
                   Authorization
                 </NavLink>
-              </li>
+              </li> */}
 
               <li className="nav-item dropdown">
                 <a
