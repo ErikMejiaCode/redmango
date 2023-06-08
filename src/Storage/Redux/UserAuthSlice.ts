@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { userInterface } from "../../Interfaces";
 
-const initalState: userInterface = {
+export const emptyUserState: userInterface = {
   fullName: "",
   id: "",
   email: "",
@@ -10,7 +10,7 @@ const initalState: userInterface = {
 
 export const userAuthSlice = createSlice({
   name: "userAuth",
-  initialState: initalState,
+  initialState: emptyUserState,
   reducers: {
     setLoggedInUser: (state, action) => {
       state.fullName = action.payload.fullName;

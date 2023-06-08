@@ -8,6 +8,9 @@ import { useGetShoppingCartQuery } from "../apis/shoppingCartApi";
 import { setShoppingCart } from "../Storage/Redux/ShoppingCartSlice";
 import Login from "../Components/Page/Login";
 import Register from "../Components/Page/Register";
+import jwt_Decode from "jwt-decode";
+import { userInterface } from "../Interfaces";
+import { setLoggedInUser } from "../Storage/Redux/UserAuthSlice";
 
 function App() {
   const dispatch = useDispatch();
@@ -15,6 +18,15 @@ function App() {
   const { data, isLoading } = useGetShoppingCartQuery(
     "bcefdbde-70bf-44b3-845d-1530341c417c"
   );
+
+  useEffect(() => {
+    const localToken = localStorage.getItem("token");
+    if (localToken) {
+      const { fullName, id, email, role }: userInterface =
+        jwt_Decode(localToken);
+      dispatch(setLoggedInUser({ fullName, id, email, role }));
+    }
+  }, []);
 
   useEffect(() => {
     if (!isLoading) {
