@@ -7,6 +7,7 @@ import {
   Home,
   MenuItemDetails,
   NotFound,
+  Payment,
   ShoppingCart,
 } from "../Pages";
 import { Routes, Route } from "react-router-dom";
@@ -66,6 +67,7 @@ function App() {
             element={<AuthenticationTestAdmin />}
           ></Route>
           <Route path="/accessDenied" element={<AccessDenied />}></Route>
+          <Route path="/payment" element={<Payment />}></Route>
 
           <Route path="*" element={<NotFound />}></Route>
         </Routes>

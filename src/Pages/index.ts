@@ -5,6 +5,7 @@ import ShoppingCart from "./ShoppingCart";
 import AccessDenied from "./AccessDenied";
 import AuthenticationTest from "./AuthenticationTest";
 import AuthenticationTestAdmin from "./AuthenticationTestAdmin";
+import Payment from "./Payment";
 
 export {
   Home,
@@ -14,4 +15,5 @@ export {
   AccessDenied,
   AuthenticationTest,
   AuthenticationTestAdmin,
+  Payment,
 };
