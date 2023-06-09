@@ -34,7 +34,6 @@ function Login() {
     });
 
     if (response.data) {
-      console.log(response.data);
       const { token } = response.data.result;
       const { fullName, id, email, role }: userInterface = jwt_Decode(token);
       localStorage.setItem("token", token);
@@ -43,7 +42,6 @@ function Login() {
 
       navigate("/");
     } else if (response.error) {
-      console.log(response.error.data.errorMessages[0]);
       setError(response.error.data.errorMessages[0]);
     }
 

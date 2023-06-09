@@ -14,7 +14,6 @@ function MenuItemList() {
 
   useEffect(() => {
     if (!isLoading) {
-      console.log(data.result);
       dispatch(setMenuItem(data.result));
     }
   }, [isLoading]);
