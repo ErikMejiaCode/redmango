@@ -5,8 +5,10 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 import { toastNotify } from "../../../Helper";
+import orderSummaryProps from "../Order/orderSummaryProps";
+import { cartItemInterface } from "../../../Interfaces";
 
-const PaymentForm = () => {
+const PaymentForm = ({ data, userInput }: orderSummaryProps) => {
   const stripe = useStripe();
   const elements = useElements();
   const [isProcessing, setIsProcessing] = useState(false);
@@ -35,6 +37,25 @@ const PaymentForm = () => {
       setIsProcessing(false);
     } else {
       console.log(result);
+
+      // "pickupName": "string",
+      // "pickupPhoneNumber": "string",
+      // "pickupEmail": "string",
+      // "applicationUserId": "string",
+      // "orderTotal": 0,
+      // "stripedPaymentIntentId": "string",
+      // "status": "string",
+      // "totalItems": 0,
+
+      const orderDetailsDTO: any = [];
+      data.cartItems.forEach((item: cartItemInterface) => {
+        const tempOrderDetail: any = {};
+        tempOrderDetail["menuItemId"] = item.menuItem?.id;
+        tempOrderDetail["quantity"] = item.quantity;
+        tempOrderDetail["itemName"] = item.menuItem?.name;
+        tempOrderDetail["price"] = item.menuItem?.price;
+        orderDetailsDTO.push(tempOrderDetail);
+      });
     }
   };
 
