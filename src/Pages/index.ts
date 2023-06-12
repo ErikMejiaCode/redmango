@@ -6,6 +6,7 @@ import AccessDenied from "./AccessDenied";
 import AuthenticationTest from "./AuthenticationTest";
 import AuthenticationTestAdmin from "./AuthenticationTestAdmin";
 import Payment from "./Payment";
+import OrderConfirmed from "./Order/OrderConfirmed";
 
 export {
   Home,
@@ -16,4 +17,5 @@ export {
   AuthenticationTest,
   AuthenticationTestAdmin,
   Payment,
+  OrderConfirmed,
 };
