@@ -60,6 +60,11 @@ function Header() {
                   {userData.id && `(${shoppingCartFromStore.length})`}
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/order/myOrders">
+                  Orders
+                </NavLink>
+              </li>
 
               {/* <li className="nav-item">
                 <NavLink className="nav-link" to="/authentication">
