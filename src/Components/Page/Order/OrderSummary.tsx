@@ -14,7 +14,7 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
         <div className="border py-3 px-2">
           <h4 className="text-success">Menu Items</h4>
           <div className="p-3">
-            {data.cartItems.map(
+            {data.cartItems?.map(
               (cartItem: cartItemInterface, index: number) => {
                 return (
                   <div className="d-flex" key={index}>
@@ -35,7 +35,7 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
             )}
             <hr />
             <h4 className="text-danger" style={{ textAlign: "right" }}>
-              ${data.cartTotal.toFixed(2)}
+              ${data.cartTotal?.toFixed(2)}
             </h4>
           </div>
         </div>
