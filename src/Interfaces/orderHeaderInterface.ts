@@ -1,6 +1,6 @@
-import orderDetails from "./orderDetail";
+import orderDetails from "./orderDetailInterface";
 
-export default interface orderHeader {
+export default interface orderHeaderInterface {
   orderHeaderId?: number;
   pickupName?: string;
   pickupPhoneNumber?: string;
