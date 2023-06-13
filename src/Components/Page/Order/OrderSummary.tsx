@@ -2,9 +2,26 @@ import React from "react";
 import orderSummaryProps from "./orderSummaryProps";
 import { cartItemInterface } from "../../../Interfaces";
 import { getStatusColor } from "../../../Helper";
+import { useNavigate } from "react-router-dom";
+import { SD_Roles, SD_Status } from "../../../Utility/SD";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../Storage/Redux/store";
 
 function OrderSummary({ data, userInput }: orderSummaryProps) {
   const badgeTypeColor = getStatusColor(data.status!);
+  const navigate = useNavigate();
+  //Getting the role of the logged in user
+  const userData = useSelector((state: RootState) => state.userAuthStore);
+
+  const nextStatus: any =
+    data.status! === SD_Status.CONFIRMED
+      ? { color: "info", value: SD_Status.BEING_COOKED }
+      : data.status! === SD_Status.BEING_COOKED
+      ? { color: "warning", value: SD_Status.READY_FOR_PICKUP }
+      : data.status! === SD_Status.READY_FOR_PICKUP && {
+          color: "success",
+          value: SD_Status.COMPLETED,
+        };
 
   return (
     <div>
@@ -47,6 +64,25 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
             </h4>
           </div>
         </div>
+      </div>
+      <div className="d-flex justify-content-between align-items-center mt-3">
+        <button
+          className="btn btn-secondary"
+          onClick={() => {
+            navigate(-1);
+          }}
+        >
+          Back to Orders
+        </button>
+
+        {userData.role === SD_Roles.ADMIN && (
+          <div className="d-flex">
+            <button className="btn btn-danger mx-2">Cancel</button>
+            <button className={`btn btn-${nextStatus.color}`}>
+              {nextStatus.value}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
