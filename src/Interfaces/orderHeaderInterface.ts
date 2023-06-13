@@ -1,3 +1,4 @@
+import { SD_Status } from "../Utility/SD";
 import orderDetails from "./orderDetailInterface";
 
 export default interface orderHeaderInterface {
@@ -10,7 +11,7 @@ export default interface orderHeaderInterface {
   orderTotal?: number;
   orderDate?: Date;
   stripePaymentIntentId?: number;
-  status?: string;
+  status?: SD_Status;
   totalItems?: number;
   orderDetails?: orderDetails[];
 }
