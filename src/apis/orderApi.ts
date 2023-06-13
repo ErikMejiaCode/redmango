@@ -38,7 +38,7 @@ const orderApi = createApi({
         url: "order/" + orderDetails.orderHeaderId,
         method: "PUT",
         headers: {
-          "Content-type": "application/jscon",
+          "Content-type": "application/json",
         },
         body: orderDetails,
       }),
