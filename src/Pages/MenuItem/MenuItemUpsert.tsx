@@ -7,12 +7,20 @@ import {
   useUpdateMenuItemMutation,
 } from "../../apis/manuItemApi";
 import { useNavigate, useParams } from "react-router-dom";
+import { SD_Categories } from "../../Utility/SD";
+
+const Categories = [
+  SD_Categories.APPETIZER,
+  SD_Categories.ENTREE,
+  SD_Categories.DESSERT,
+  SD_Categories.BEVERAGES,
+];
 
 const menuItemData = {
   name: "",
   description: "",
   specialTag: "",
-  category: "",
+  category: Categories[0],
   price: "",
 };
 
@@ -159,14 +167,17 @@ function MenuItemUpsert() {
               value={menuItemInputs.specialTag}
               onChange={handleMenuItemInput}
             />
-            <input
-              type="text"
-              className="form-control mt-3"
+            <select
+              className="form-control mt-3 form-select"
               placeholder="Enter Category"
               name="category"
               value={menuItemInputs.category}
               onChange={handleMenuItemInput}
-            />
+            >
+              {Categories.map((category) => (
+                <option value={category}>{category}</option>
+              ))}
+            </select>
             <input
               type="number"
               className="form-control mt-3"
