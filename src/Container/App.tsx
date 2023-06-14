@@ -2,6 +2,7 @@ import React from "react";
 import { Footer, Header } from "../Components/Layout";
 import {
   AccessDenied,
+  AllOrders,
   AuthenticationTest,
   AuthenticationTestAdmin,
   Home,
@@ -75,6 +76,7 @@ function App() {
             element={<OrderConfirmed />}
           ></Route>
           <Route path="/order/myOrders" element={<MyOrders />}></Route>
+          <Route path="/order/allOrders" element={<AllOrders />}></Route>
           <Route
             path="/order/orderDetails/:id"
             element={<OrderDetails />}
