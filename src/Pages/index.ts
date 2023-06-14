@@ -10,6 +10,7 @@ import OrderConfirmed from "./Order/OrderConfirmed";
 import MyOrders from "./Order/MyOrders";
 import OrderDetails from "./Order/OrderDetails";
 import AllOrders from "./Order/AllOrders";
+import { MenuItemList } from "../Components/Page/MenuItems";
 
 export {
   Home,
@@ -24,4 +25,5 @@ export {
   MyOrders,
   OrderDetails,
   AllOrders,
+  MenuItemList,
 };

@@ -25,6 +25,7 @@ import jwt_Decode from "jwt-decode";
 import { userInterface } from "../Interfaces";
 import { setLoggedInUser } from "../Storage/Redux/UserAuthSlice";
 import { RootState } from "../Storage/Redux/store";
+import MenuItemList from "../Pages/MenuItem/MenuItemList";
 
 function App() {
   const dispatch = useDispatch();
@@ -77,6 +78,10 @@ function App() {
           ></Route>
           <Route path="/order/myOrders" element={<MyOrders />}></Route>
           <Route path="/order/allOrders" element={<AllOrders />}></Route>
+          <Route
+            path="/menuitem/menuitemlist"
+            element={<MenuItemList />}
+          ></Route>
           <Route
             path="/order/orderDetails/:id"
             element={<OrderDetails />}
