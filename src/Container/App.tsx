@@ -7,6 +7,7 @@ import {
   AuthenticationTestAdmin,
   Home,
   MenuItemDetails,
+  MenuItemUpsert,
   MyOrders,
   NotFound,
   OrderConfirmed,
@@ -81,6 +82,14 @@ function App() {
           <Route
             path="/menuitem/menuitemlist"
             element={<MenuItemList />}
+          ></Route>
+          <Route
+            path="/menuitem/menuitemupsert/:id"
+            element={<MenuItemUpsert />}
+          ></Route>
+          <Route
+            path="/menuitem/menuitemupsert"
+            element={<MenuItemUpsert />}
           ></Route>
           <Route
             path="/order/orderDetails/:id"
