@@ -10,7 +10,7 @@ import OrderConfirmed from "./Order/OrderConfirmed";
 import MyOrders from "./Order/MyOrders";
 import OrderDetails from "./Order/OrderDetails";
 import AllOrders from "./Order/AllOrders";
-import { MenuItemList } from "../Components/Page/MenuItems";
+import { MenuItemList } from "../Components/Page/Home";
 import MenuItemUpsert from "./MenuItem/MenuItemUpsert";
 
 export {
